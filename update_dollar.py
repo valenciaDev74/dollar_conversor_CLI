@@ -1,11 +1,6 @@
 import requests
 
-# This line makes a GET request to the PydolarVenezuela API.
-response = requests.get(
-    "https://pydolarvenezuela-api.vercel.app/api/v1/dollar/dolar_promedio")
 
-
-# This function gets the average price of the dollar from the JSON response.
 def get_average_price(json_data):
 
     prices = []
@@ -17,5 +12,9 @@ def get_average_price(json_data):
 
 # This function gets the average price of the dollar and returns it.
 def get():
+    # This line makes a GET request to the PydolarVenezuela API.
+    response = requests.get(
+        "https://pydolarvenezuela-api.vercel.app/api/v1/dollar/dolar_promedio")
+
     body = response.json()
     return get_average_price(body)
