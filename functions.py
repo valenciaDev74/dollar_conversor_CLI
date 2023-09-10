@@ -1,20 +1,14 @@
 import json
 import update_dollar as update
 
+
 # This function updates the dollar value in the `dollar_value.json` file.
-
-
 def update_dollar():
-
-    with open("dollar_value.json") as f:
-        data = json.load(f)
 
     new_value = round(update.get(), 2)
 
-    data["dollar_value"] = new_value
-
     with open("dollar_value.json", "w") as f:
-        json.dump(data, f, indent=2)
+        json.dump({"dollar_value": new_value}, f, indent=2)
 
 
 # This function gets the dollar value from the `dollar_value.json` file.
